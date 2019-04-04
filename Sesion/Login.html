@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	
+	     			<!--Links css-->
+				<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+				<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+				<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+				<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+				<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+				<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+				<link rel="stylesheet" type="text/css" href="css/util.css">
+				<link rel="stylesheet" type="text/css" href="css/main.css">
+		    <link rel="stylesheet" href="css3/style.css">
+		    <link rel="stylesheet" href="css3/aos.css">
+		    <link rel="stylesheet" href="css3/estilitos.css">
+				<link rel="stylesheet" href="css3/Fondos2.css">
+				<!--Links css-->
+
+</head>
+
+<!--Preloader-->
+<div id="preloader">
+<div class="preload-content">
+<div id="original-load"></div>
+</div>
+</div>
+<!--Preloader-->
+
+
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100" >
+
+				<div class="login100-pic js-tilt" style="margin-top: -120px; margin-bottom: 15px; margin-left: 220px;"  data-tilt  >
+					<img src="images/img-01.png" alt="IMG" >
+				</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" placeholder="Email" id="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password" id="Clave">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button onclick="botonlogin()" class="login100-form-btn" >
+							Login
+						</button>
+					</div>
+
+
+
+	</div>
+	</div>
+	</div>
+
+
+<!--Script conexiones-->
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<script src="js/main.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/main3.js"></script>
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/active.js"></script>
+<script src="js/Menusito.js"></script>
+<script src="js/owl.carousell.min.js"></script>
+<script src="js/script.js"></script>
+<script src="Claseadministrador.js"></script>
+<!--Script conexiones-->
+
+
+<script text="javascript">
+	function botonlogin() //Con esta funcion podemos mostrar si la persona que se esta logueando existe
+			 {
+					let admactual = new _Administrador(  //llama al Claseadministrador.js para ver el schema de administrador
+        "",  document.getElementById("Email").value,   //Llama al email
+              document.getElementById("Clave").value,   //Llama a  la clave
+
+              "",
+      ""
+
+        );
+        admactual.Login().then(function(response) {    //Llama a la funcion de contrelleradministrador para que esta se ejecute
+  console.log("Success!", response);
+
+			localStorage.setItem('usuariologueado',JSON.stringify(response)); //Selecciona el item del usuario que ya esta logueado
+			$(document).ready(function(){
+	if(localStorage.getItem('usuariologueado') != null){   //Si el usuario logueado es igual a que "no es un intruso"
+			location.href = "../Milkshake/ClassFrontend/Form/Milkdesign.html" //Me envia a la pagina donde se pueden crear batidos solo para administrador
+	}
+});
+			 $(document).ready(function(){
+	if(localStorage.getItem('usuariologueado') == null){   //Si el usuario logueado es igual a que " es un intruso"
+			location.href = "Login.html"   //Me envia un alert de error y al aceptar el error me recarga la pagina
+	}
+});
+
+
+
+
+
+}, function(error) {
+  console.error("Failed!", error); //Me envia un alert de error y al aceptar el error me recarga la pagina
+             alert("Error " + error); //Me envia un alert de error y al aceptar el error me recarga la pagina
+						 	location.href = "Login.html"  //Me envia un alert de error y al aceptar el error me recarga la pagina
+
+});
+             }
+
+	 </script>
+
+
+</body>
+</html>

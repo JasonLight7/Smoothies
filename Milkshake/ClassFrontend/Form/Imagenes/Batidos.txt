@@ -1,0 +1,10 @@
+Menu
+Inicio: Muestra imagenes de batidos y relacionados.	
+Venta: Muestra batidos creados por mi, que 
+como tal ya se pueden guardar en la base de datos.
+Creaciones: Se permite crear los propios 
+batidos que uno quiera con 
+el precio y sabor que uno quiera.
+Vista: Se puede ver todo lo que se guarda 
+en la base de datos.
+Salir: Regresa al Login.

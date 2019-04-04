@@ -1,0 +1,38 @@
+body{
+  background: #9053c7;
+      background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+      background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+      background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+      background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+
+#Sabores{
+display: none ;
+}
+#Saboress{
+display: none ;
+}
+#Saboresss{
+display: none ;
+}
+#imgbatidos{
+margin-top: -70px;
+}
+#ConfirmarCombinacion{
+height:50px;
+text-align: left;
+padding: 10px;
+border-radius: 50px;
+transition: all 0.4s;
+}
+#ConfirmarCombinacion:hover{
+  background: #9611b0e3 ;
+  color:white;
+}
+.confirma{
+margin-left: 17px;
+}
+#muestrabatidos{
+  text-align:justify;
+  color:white;
+}
